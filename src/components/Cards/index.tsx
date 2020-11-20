@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useState } from 'react';
-import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiHome } from 'react-icons/fi';
 import { useTransition } from 'react-spring';
 import Card from './Card';
 
@@ -118,7 +118,7 @@ const Cards: React.FC = () => {
     const [index, set] = useState(0);
 
     const rightClick = useCallback(() => set(state => (state + 1) % pages.length), [])
-    const leftClick = useCallback(() => set(state => (state - 1) % pages.length), [])
+    const leftClick = useCallback(() => set(0), [])
 
     const transitions = useTransition(index, p => p, {
         from: { opacity: 1, transform: 'translate3d(100%,0,0)' },
@@ -142,7 +142,7 @@ const Cards: React.FC = () => {
             }
             )}
             <button onClick={rightClick} id="rightButton"><FiArrowRight /></button>
-            <button onClick={leftClick} id="leftButton"><FiArrowLeft /></button>
+            <button onClick={leftClick} id="leftButton"><FiHome /></button>
         </Container >
     );
 }

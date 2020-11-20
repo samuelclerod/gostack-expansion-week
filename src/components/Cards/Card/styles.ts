@@ -19,7 +19,7 @@ export const Container = styled(animated.div)`
 
     div{
         max-width: 900px;
-        font-size: 32px;
+        font-size: 28px;
         text-align: justify;
         p {
             text-indent: 2em;
