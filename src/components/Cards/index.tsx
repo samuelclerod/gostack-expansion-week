@@ -8,13 +8,15 @@ import { Container } from './styles';
 interface Page {
     title: string;
     background: string;
+    color: string;
     content: ReactNode;
 }
 
 const pages: Page[] = [
     {
         title: 'O que é Empatia?',
-        background: 'lightpink',
+        background: '#D7263D',
+        color: 'white',
         content: (
             <>
                 <p>
@@ -28,7 +30,8 @@ const pages: Page[] = [
     },
     {
         title: 'O poder da Empatia',
-        background: 'lightblue',
+        background: '#C5D86D',
+        color: 'white',
         content: (
             <iframe
                 title="Youtube video sobre empatia"
@@ -42,7 +45,8 @@ const pages: Page[] = [
     },
     {
         title: 'Empatia x Problemas',
-        background: 'lightgreen',
+        background: '#F46036',
+        color: 'white',
         content: (<>
             <p>A capacidade de se colocar no lugar do outro, que se desenvolve através da empatia, ajuda a compreender melhor o comportamento alheio em determinadas circunstâncias e a forma como outra pessoa toma as decisões.</p>
             <p>Nas relações pessoais a empatia pode ser fundamental para a compreensão de dificuldades das pessoas com quem se convive, ajudando a diminuir e evitar conflitos. O mesmo pode ocorrer no ambiente de trabalho, já que a empatia pode ajudar que um colega compreenda as dificuldades enfrentadas por outro</p>
@@ -52,7 +56,8 @@ const pages: Page[] = [
     },
     {
         title: 'Empatia x Trabalho',
-        background: 'lightpink',
+        background: '#2E294E',
+        color: 'white',
         content: (<>
             <p>No mundo corporativo, empatia significa aceitar a diversidade, estar sempre aberto a sugestões e ter disposição para tentar o novo, compreender os erros e, a partir deles, aprender novas liçõe</p>
             <p>Estudos indicam que os valores associados à empatia, autoconhecimento, motivação, autogestão e relacionamento social são responsáveis por quase 60% da performance de um profissional hoje em dia.</p>
@@ -62,7 +67,8 @@ const pages: Page[] = [
     },
     {
         title: 'Empatia desenvolve outras softskills',
-        background: 'lightblue',
+        background: '#1B998B',
+        color: 'white',
         content: (<>
             <ul>
                 <li>
@@ -83,7 +89,8 @@ const pages: Page[] = [
     },
     {
         title: 'Como desenvolver Empatia?',
-        background: 'lightgreen',
+        background: '#000',
+        color: 'white',
         content: (<>
             <ol>
                 <li>
@@ -122,11 +129,12 @@ const Cards: React.FC = () => {
         <Container>
             {transitions.map(({ item, props, key }) => {
                 const page = pages[item]
-                const color = page.background;
+                const background = page.background;
+                const color = page.color;
                 return <Card
                     key={key}
                     title={page.title}
-                    style={{ ...props, background: color }}
+                    style={{ ...props, background, color }}
                 >
                     {page.content}
                 </Card>

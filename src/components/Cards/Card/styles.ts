@@ -5,11 +5,11 @@ export const Container = styled(animated.div)`
     height: 100vh;
     width: 100%;
     min-height: 850px;
-    text-shadow: 0.1em 0.1em 0.2em black;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+        text-shadow: 0.1em 0.1em 0.4em black;
     /* flex-wrap: wrap; */
     h1{
         padding: 80px 0;
