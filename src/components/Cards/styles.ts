@@ -10,8 +10,7 @@ export const Container = styled.div`
     text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
 
     button{
-        right: 10px;
-        top: 40%;
+        bottom: 5%;
         z-index: 1;
         position: absolute;
         opacity: 0.5;
@@ -29,5 +28,14 @@ export const Container = styled.div`
         &:hover{
             opacity: 0.9;
         }
+    }
+
+    #leftButton {
+
+        left: 10px;
+    }
+
+    #rightButton {
+        right: 10px;
     }
 `;

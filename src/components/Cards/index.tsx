@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useState } from 'react';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { useTransition } from 'react-spring';
 import Card from './Card';
 
@@ -30,7 +30,14 @@ const pages: Page[] = [
         title: 'O poder da Empatia',
         background: 'lightblue',
         content: (
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Q6rAV_7J5T0?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe
+                title="Youtube video sobre empatia"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Q6rAV_7J5T0?feature=oembed"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
         )
     },
     {
@@ -103,7 +110,8 @@ const pages: Page[] = [
 const Cards: React.FC = () => {
     const [index, set] = useState(0);
 
-    const onClick = useCallback(() => set(state => (state + 1) % pages.length), [])
+    const rightClick = useCallback(() => set(state => (state + 1) % pages.length), [])
+    const leftClick = useCallback(() => set(state => (state - 1) % pages.length), [])
 
     const transitions = useTransition(index, p => p, {
         from: { opacity: 1, transform: 'translate3d(100%,0,0)' },
@@ -125,7 +133,8 @@ const Cards: React.FC = () => {
 
             }
             )}
-            <button onClick={onClick}><FiArrowRight /></button>
+            <button onClick={rightClick} id="rightButton"><FiArrowRight /></button>
+            <button onClick={leftClick} id="leftButton"><FiArrowLeft /></button>
         </Container >
     );
 }
